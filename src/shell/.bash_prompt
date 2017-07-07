@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Borrowed heavily from @mathiasbynens
 
-# Display Git information from on @mathiasbynens bash_prompt
+# Display Git information directly from on @mathiasbynens bash_prompt
 prompt_git() {
 	local s='';
 	local branchName='';
@@ -52,6 +52,7 @@ prompt_git() {
 	fi;
 }
 
+# Colors
 tput sgr0; # reset colors
 reset=$(tput sgr0);
 blue=$(tput setaf 33);
@@ -60,14 +61,11 @@ red=$(tput setaf 124);
 yellow=$(tput setaf 136);
 white=$(tput setaf 15);
 
-# Set the terminal title and prompt.
+# Title and Prompt
 PS1="\[${blue}\]dnbailey"; # username
 PS1+="\[${white}\] in ";
 PS1+="\[${green}\]\w"; # working directory full path
 PS1+="\$(prompt_git \"\[${white}\] on \[${yellow}\]\" \"\[${red}\]\")"; # Git repository details
 PS1+="\n";
 PS1+="\[${white}\]\$ \[${reset}\]"; # `$` (and reset color)
-export PS1;
-
-PS2="\[${yellow}\]→ \[${reset}\]";
-export PS2;
+export PS1;\
