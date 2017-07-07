@@ -4,3 +4,5 @@
 	email = dev@dnbailey.org
 [core]
 	editor = atom --wait
+[github]
+	user = dnbailey
