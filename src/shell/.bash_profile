@@ -5,21 +5,17 @@ source_bash_files() {
     declare -r CURRENT_DIRECTORY="$(pwd)"
 
     declare -r -a FILES_TO_SOURCE=(
-        "bash_aliases"
+        "aliases"
         "bash_prompt"
     )
 
     local file=""
     local i=""
 
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
     cd "$(dirname "$(readlink "${BASH_SOURCE[0]}")")"
 
     # shellcheck disable=SC2034
     declare -r OS="$(get_os)"
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     for i in ${!FILES_TO_SOURCE[*]}; do
 
@@ -30,20 +26,11 @@ source_bash_files() {
 
     done
 
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
     cd "$CURRENT_DIRECTORY"
 
 }
 
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
 source_bash_files
 unset -f source_bash_files
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-# Clear system messages (system copyright notice, the date
-# and time of the last login, the message of the day, etc.).
 
 clear
