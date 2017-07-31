@@ -17,3 +17,6 @@ alias g="git"
 alias gs="git status"
 alias ga="git add -A"
 alias gc="git commit"
+
+# Processing-Java
+alias p='processing-java --sketch=`pwd` --run'
