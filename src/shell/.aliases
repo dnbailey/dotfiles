@@ -20,3 +20,6 @@ alias gc="git commit"
 
 # Processing-Java
 alias p='processing-java --sketch=`pwd` --run'
+
+# Asciinema Record with Docker
+alias anr='docker run --rm -ti -v "$HOME/.config/asciinema":/root/.config/asciinema asciinema/asciinema /bin/bash'
